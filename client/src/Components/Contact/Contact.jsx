@@ -11,6 +11,7 @@ import Icon from "../Widgets/SocialIcon/Icon";
 import SocialIcon from "../Widgets/SocialIcon/SocialIcon";
 import Button from "../Widgets/Button/Button";
 import Input from "../Widgets/Input/Input";
+import Clipboard from "../Widgets/ClipboardCopy/Clipboard";
 
 // Icons from "react-icons.github.io/"
 import { IoIosSend } from "react-icons/io";
@@ -71,6 +72,7 @@ const Contact = () => {
       alert("Error sending message:", error);
     }
   };
+
   return (
     <>
       <section id="contact" className={styles.contact}>
@@ -79,12 +81,12 @@ const Contact = () => {
         <div className={styles["contact-left"]}>
           <div className={styles.contactDetail}>
             <Icon icon={IoIosSend} border={false} />
-            <p>{myDetails.email}</p>
+            <Clipboard text={"Email"}>{myDetails.email}</Clipboard>
           </div>
 
           <div className={styles.contactDetail}>
             <Icon icon={FaPhone} border={false} />
-            <p>{myDetails.phone}</p>
+            <Clipboard text={"Phone Number"}>{myDetails.phone}</Clipboard>
           </div>
 
           <SocialIcon />

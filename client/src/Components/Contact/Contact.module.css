@@ -11,47 +11,41 @@
   grid-template-rows: auto 1fr;
   row-gap: 2rem;
   /* gap: 1rem; */
+
+  h2 {
+    width: 100%;
+    font-size: 4rem;
+    text-align: center;
+    grid-column: span 2;
+  }
+  .contact-left,
+  .contact-right {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+  .contact-left {
+    grid-column: 1 / 2;
+
+    .contactDetail {
+      display: flex;
+      align-items: center;
+    }
+  }
+  .contact-right {
+    grid-column: 2 / 3;
+  }
 }
-.contact h2 {
-  width: 100%;
-  font-size: 4rem;
-  text-align: center;
-  grid-column: span 2;
-}
-.contact-left,
-.contact-right {
-  width: 100%;
-  margin-bottom: 2rem;
-}
-.contact-left {
-  grid-column: 1 / 2;
-}
-.contact-right {
-  grid-column: 2 / 3;
-}
-.contact-left .contactDetail {
-  display: flex;
-  align-items: center;
-}
-.contact-left .contactDetail p {
-  font-size: 2rem;
-}
-.contactIcons {
+
+/* .contactIcons {
   margin: 3rem;
-}
+} */
 
 @media (max-width: 1080px) {
   .contact h2 {
     font-size: 3.5rem;
   }
-  .contact-left .contactDetail p {
-    font-size: 1.8rem;
-  }
 }
 @media (max-width: 995px) {
-  .contact-left .contactDetail p {
-    font-size: 1.6rem;
-  }
   form {
     padding-left: 5%;
   }
@@ -65,9 +59,6 @@
   .contact-left,
   .contact-right {
     grid-column: span 1;
-  }
-  .contact-left .contactDetail p {
-    font-size: 1.8rem;
   }
   form {
     padding-left: 0;

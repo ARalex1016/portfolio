@@ -1,0 +1,27 @@
+@import "../../../variable.css";
+
+.para {
+  font-size: 2rem;
+
+  &:hover {
+    color: var(--main-color);
+  }
+}
+
+@media (max-width: 1080px) {
+  .para {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 995px) {
+  .para {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .para {
+    font-size: 1.6rem;
+  }
+}
