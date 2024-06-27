@@ -44,10 +44,9 @@ const Contact = () => {
 
     setBtnText("Sending...");
     setInputField(initialInputField);
-
     try {
       const response = await fetch(
-        "https://portfolioserver-brwp.onrender.com/sendMail/",
+        `${process.env.REACT_APP_SERVER_URL}/sendMail/`,
         {
           method: "POST",
           headers: {
