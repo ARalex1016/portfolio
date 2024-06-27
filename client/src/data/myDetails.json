@@ -1,0 +1,17 @@
+{
+  "logo": "CYPHOR",
+  "name": "Aslam",
+  "profession": ["Web Developer", "UI/UX Designer"],
+  "email": "aslamsheikh1016@gmail.com",
+  "phone": "+40738462116",
+  "instagram": "#",
+  "what'sApp": "+9779804106524",
+  "github": "https://github.com/ARalex1016",
+  "certificates": [
+    {
+      "course": "The Complete 2024 Web Development Bootcamp",
+      "completion_date": "May 16, 2024",
+      "imgSrc": "/certificatesImg/Udemy_Web_Development_Certificate2024.png"
+    }
+  ]
+}

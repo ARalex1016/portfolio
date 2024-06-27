@@ -1,0 +1,11 @@
+:root {
+  --bg-color: #000000;
+  /* --second-bg-color: #121212; */
+  --second-bg-color: #151515;
+  --text-color: #ffffff;
+  --second-text-color: #b8b8b8;
+  --main-color: #fd560d;
+  /* --line-color: rgb(23, 136, 174); */
+  --line-color: #fd560d;
+  --highlight-color: yellow;
+}

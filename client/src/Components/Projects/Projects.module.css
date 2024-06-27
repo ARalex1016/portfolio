@@ -1,0 +1,236 @@
+@import "../../variable.css";
+
+.projects {
+  max-width: 100vw;
+  margin: 0 auto;
+  margin-top: 2rem;
+  padding-top: 5%;
+  color: white;
+}
+.title {
+  color: var(--text-color);
+  font-size: 3.5rem;
+  border: 3px solid var(--line-color);
+  border-radius: 8px;
+  padding: 10px 25px;
+  display: inline-block;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.row {
+  display: grid;
+  grid-template-columns: 1fr 2px 1fr;
+  grid-column-gap: 40px;
+
+  .imgSection {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    grid-area: theImage;
+    padding: 0;
+    margin: 0;
+    z-index: 10;
+
+    a {
+      width: 70%;
+
+      .img {
+        width: 100%;
+        height: auto;
+        border-radius: 1.5rem;
+        margin: 0;
+        box-sizing: border-box;
+        transition: transform 0.4s ease;
+        z-index: 10;
+      }
+    }
+  }
+  &:nth-child(odd) {
+    grid-template-areas: "theDetail theLine theImage";
+
+    .imgSection {
+      justify-content: flex-end;
+    }
+    .verticalLine .circle::after {
+      right: -15%;
+      transform: translateX(100%);
+    }
+  }
+  &:nth-child(even) {
+    grid-template-areas: "theImage theLine theDetail";
+
+    .verticalLine .circle::before {
+      left: -15%;
+      transform: translateX(-100%);
+    }
+  }
+  &:nth-child(odd) .verticalLine .circle::after,
+  &:nth-child(even) .verticalLine .circle::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: calc(100% + 25vw);
+    height: 1px;
+    background-color: var(--line-color);
+    z-index: -1;
+    opacity: 0.8;
+    transition: all 0.5s;
+  }
+  .verticalLine {
+    position: relative;
+    background-color: var(--line-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: theLine;
+
+    .circle {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background-color: var(--bg-color);
+      border: 3px solid var(--highlight-color);
+      border-radius: 50%;
+      /* top: 0; */
+      transition: all 0.5s;
+      z-index: 2;
+    }
+  }
+  .detailSection {
+    height: fit-content;
+    padding: 30px 40px;
+    background-color: var(--second-bg-color);
+    border-radius: 15px;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    grid-area: theDetail;
+    transition: all 0.4s;
+    z-index: 10;
+
+    h2 {
+      font-size: 2.5rem;
+      padding-bottom: 0.8rem;
+      color: var(--highlight-color);
+    }
+
+    p {
+      color: var(--second-text-color);
+      font-size: 1.5rem;
+      line-height: 2.5rem;
+    }
+  }
+  .imgSection,
+  .detailSection {
+    margin-bottom: 35px;
+  }
+  .imgSection:nth-child(1),
+  .detailSection:nth-child(1) {
+    margin-top: 30px;
+  }
+  &:hover {
+    .imgSection .img {
+      transform: scale(1.1);
+    }
+    .verticalLine .circle {
+      background-color: var(--highlight-color);
+      box-shadow: 0 0 9px 3px var(--highlight-color);
+      z-index: 5;
+    }
+    .detailSection {
+      border: 0.2rem solid var(--highlight-color);
+      box-shadow: 0 0 9px 1px var(--highlight-color);
+    }
+
+    &:nth-child(odd) .verticalLine .circle::after,
+    &:nth-child(even) .verticalLine .circle::before {
+      height: 2px;
+      background-color: var(--highlight-color);
+      opacity: 1;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2.5rem;
+    border: 3px solid var(--line-color);
+    border-radius: 8px;
+    padding: 10px 15px;
+    display: inline-block;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .row {
+    grid-column-gap: 4rem;
+
+    .imgSection {
+      margin-bottom: 0;
+    }
+
+    .verticalLine {
+      top: 6rem;
+      align-items: flex-start;
+    }
+    .detailSection {
+      margin-top: 1rem;
+
+      h2 {
+        font-size: 2rem;
+      }
+
+      p {
+        font-size: 1.4rem;
+      }
+    }
+
+    &:nth-child(odd) .imgSection {
+      justify-content: center;
+    }
+    &:nth-child(even) {
+      .imgSection {
+        justify-content: center;
+      }
+
+      .verticalLine .circle::before {
+        right: 15%;
+        transform: translateX(10.2%);
+        z-index: 100;
+      }
+    }
+    &:nth-child(odd),
+    &:nth-child(even) {
+      grid-template-columns: 2px 1fr;
+      grid-template-areas:
+        "theLine theImage"
+        "theLine theDetail";
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 2.2rem;
+    border: 3px solid var(--line-color);
+    border-radius: 8px;
+    padding: 10px 15px;
+    display: inline-block;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .row {
+    .verticalLine {
+      display: none;
+    }
+
+    &:nth-child(odd),
+    &:nth-child(even) {
+      grid-template-columns: 1fr;
+      grid-column-gap: 0;
+    }
+  }
+}

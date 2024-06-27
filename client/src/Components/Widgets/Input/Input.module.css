@@ -1,0 +1,35 @@
+@import "../../../variable.css";
+
+input {
+  width: 100%;
+}
+textarea {
+  width: 100%;
+  min-height: 100px;
+  max-height: 200px;
+  resize: vertical;
+}
+.inputField {
+  color: var(--text-color);
+  font-size: 1.8rem;
+  background-color: var(--bg-color);
+  border: none;
+  border-radius: 1rem;
+  outline: none;
+  margin: 1rem 0;
+  padding: 1.5rem 2.5rem;
+}
+
+@media (max-width: 995px) {
+  input,
+  textarea {
+    width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  input,
+  textarea {
+    width: 100%;
+  }
+}

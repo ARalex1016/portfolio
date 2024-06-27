@@ -1,0 +1,65 @@
+@import "../../variable.css";
+
+.skills {
+  width: 90vw;
+  background-color: var(--second-bg-color);
+  border-radius: 6.4rem 6.4rem 0 0;
+  margin: 0 auto;
+  padding-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.skills h2 {
+  font-size: 4.5rem;
+  font-weight: 700;
+}
+.skills p {
+  font-size: 1.8rem;
+  letter-spacing: 0.08rem;
+  line-height: 1.5em;
+  text-align: center;
+  color: var(--second-text-color);
+  margin: 1.5rem 0 5rem 0;
+}
+.skill-slider {
+  width: 100%;
+  padding: 4rem 0;
+  z-index: 1;
+}
+.itemBar {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  margin: auto;
+}
+.img {
+  height: 90px;
+  margin-top: -5px;
+}
+.circular-progressbar {
+  transition: all 1s ease-in-out;
+}
+
+@media (max-width: 480px) {
+  .skills {
+    border-radius: 4rem 4rem 0 0;
+    padding-top: 4rem;
+  }
+  .skills h2 {
+    font-size: 3.8rem;
+    font-weight: 700;
+  }
+  .skills p {
+    margin-bottom: 1.5rem;
+  }
+  .itemBar {
+    width: 160px;
+    height: 160px;
+  }
+  .img {
+    height: 60px;
+    margin-top: 0;
+  }
+}

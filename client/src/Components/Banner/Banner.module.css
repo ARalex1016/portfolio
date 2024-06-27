@@ -1,0 +1,99 @@
+@import "../../variable.css";
+
+section {
+  padding: 5rem 9%;
+}
+.home {
+  min-height: 100svh;
+  background-color: var(--bg-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8rem;
+}
+.home-img img {
+  position: relative;
+  width: 32vw;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.home-img img:hover {
+  box-shadow: 0 0 10px var(--main-color), 0 0 15px var(--main-color),
+    0 0 50px var(--main-color);
+}
+.home .home-content h1 {
+  font-size: 6rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+span {
+  color: var(--main-color);
+}
+.home-content h3.typing-text {
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  /* display: inline; */
+}
+.typing-cursor {
+  display: inline-block;
+  width: 10px;
+  background-color: black;
+  animation: blink 0.7s steps(2, start) infinite;
+}
+@keyframes blink {
+  to {
+    visibility: hidden;
+  }
+}
+.home-content > p {
+  color: var(--second-text-color);
+  font-size: 1.7rem;
+  font-weight: 500;
+}
+.home-button {
+  display: flex;
+  column-gap: 3rem;
+}
+
+@media (max-width: 995px) {
+  .home {
+    flex-direction: column;
+    margin: 0rem 2rem;
+    gap: 5rem;
+  }
+  .home .home-content h3 {
+    font-size: 2.5rem;
+  }
+  .home .home-content h1 {
+    font-size: 5rem;
+  }
+  .home .home-img img {
+    width: 60vw;
+    margin-top: 4rem;
+  }
+  /* Banner End */
+}
+
+@media (max-width: 768px) {
+  .home .home-img img {
+    width: 70vw;
+  }
+}
+
+@media (max-width: 480px) {
+  .home {
+    gap: 2rem;
+  }
+  .home .home-img img {
+    width: 60vw;
+    margin-top: 2rem;
+  }
+  .home .home-content h1 {
+    font-size: 4rem;
+    line-height: 1;
+  }
+  .home-button {
+    column-gap: 2rem;
+  }
+}

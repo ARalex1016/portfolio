@@ -1,0 +1,43 @@
+@import "../../../variable.css";
+
+.button {
+  all: unset;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 1.2rem 2rem;
+  border: medium solid var(--main-color);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  overflow: hidden;
+  transition: border 300ms, color 300ms;
+  user-select: none;
+}
+.button a {
+  text-decoration: none;
+}
+.button p {
+  color: var(--main-color);
+  font-size: 2.2rem;
+  font-weight: 900;
+  z-index: 1;
+}
+.button:hover {
+  background-color: var(--main-color);
+  box-shadow: 0 0 1.2rem var(--main-color);
+}
+.button:hover p {
+  color: black;
+}
+.button:active {
+  border-color: var(--main-color);
+}
+
+@media (max-width: 480px) {
+  .button {
+    padding: 0.8rem 0.8rem;
+  }
+  .button p {
+    font-size: 1.5rem;
+  }
+}

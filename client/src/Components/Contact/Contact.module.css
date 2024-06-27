@@ -1,0 +1,79 @@
+@import "../../variable.css";
+
+.contact {
+  width: 90vw;
+  background-color: var(--second-bg-color);
+  border-radius: 6.4rem;
+  margin: 0 auto;
+  margin-bottom: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto 1fr;
+  row-gap: 2rem;
+  /* gap: 1rem; */
+}
+.contact h2 {
+  width: 100%;
+  font-size: 4rem;
+  text-align: center;
+  grid-column: span 2;
+}
+.contact-left,
+.contact-right {
+  width: 100%;
+  margin-bottom: 2rem;
+}
+.contact-left {
+  grid-column: 1 / 2;
+}
+.contact-right {
+  grid-column: 2 / 3;
+}
+.contact-left .contactDetail {
+  display: flex;
+  align-items: center;
+}
+.contact-left .contactDetail p {
+  font-size: 2rem;
+}
+.contactIcons {
+  margin: 3rem;
+}
+
+@media (max-width: 1080px) {
+  .contact h2 {
+    font-size: 3.5rem;
+  }
+  .contact-left .contactDetail p {
+    font-size: 1.8rem;
+  }
+}
+@media (max-width: 995px) {
+  .contact-left .contactDetail p {
+    font-size: 1.6rem;
+  }
+  form {
+    padding-left: 5%;
+  }
+}
+@media (max-width: 768px) {
+  .contact {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+  }
+  .contact h2,
+  .contact-left,
+  .contact-right {
+    grid-column: span 1;
+  }
+  .contact-left .contactDetail p {
+    font-size: 1.8rem;
+  }
+  form {
+    padding-left: 0;
+  }
+  input,
+  textarea {
+    width: 100%;
+  }
+}
