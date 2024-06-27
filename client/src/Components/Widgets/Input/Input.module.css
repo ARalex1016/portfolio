@@ -5,11 +5,13 @@ input {
 }
 textarea {
   width: 100%;
+  max-width: 42rem;
   min-height: 100px;
   max-height: 200px;
   resize: vertical;
 }
 .inputField {
+  max-width: 42rem;
   color: var(--text-color);
   font-size: 1.8rem;
   background-color: var(--bg-color);

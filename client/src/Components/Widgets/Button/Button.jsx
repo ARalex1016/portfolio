@@ -1,13 +1,13 @@
 import styles from "./Button.module.css";
 
-const Button = ({ label, action, url, downloadable = false }) => {
+const Button = ({ label, action, url, downloadable = false, fileName }) => {
   if (url) {
     return (
       <>
         <button className={styles.button} onClick={action}>
           <a
             href={url}
-            download={downloadable ? "cvAslam.pdf" : undefined}
+            download={downloadable ? fileName : undefined}
             target="_blank"
             rel="noreferrer"
           >

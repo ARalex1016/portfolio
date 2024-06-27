@@ -3,7 +3,7 @@ import { useEffect, useState, useCallback } from "react";
 // Data (json)
 import myDetails from "../../data/myDetails.json";
 
-// Images Import
+// Assets
 import bannerImg4 from "../../assets/bannerImg/bannerImg4.png";
 import myResume from "../../assets/myCv/MyResume.pdf";
 
@@ -79,7 +79,12 @@ const Banner = () => {
           <SocialIcon />
 
           <div className={styles["home-button"]}>
-            <Button url={myResume} label={"Download CV"} downloadable={true} />
+            <Button
+              url={myResume}
+              label={"Download CV"}
+              downloadable={true}
+              fileName={"cvAslam.pdf"}
+            />
             <Button url={"#contact"} label={"Contact Me"} />
           </div>
         </div>

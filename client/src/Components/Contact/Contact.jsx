@@ -17,6 +17,9 @@ import Clipboard from "../Widgets/ClipboardCopy/Clipboard";
 import { IoIosSend } from "react-icons/io";
 import { FaPhone } from "react-icons/fa6";
 
+// Assets
+import myCv from "../../assets/myCv/MyResume.pdf";
+
 const Contact = () => {
   const initialInputField = {
     name: "",
@@ -46,7 +49,7 @@ const Contact = () => {
     setInputField(initialInputField);
     try {
       const response = await fetch(
-        "https://portfolioserver-brwp.onrender.com/sendMail/",
+        "https://portfolioserver-7o94.onrender.com/sendMail/",
         {
           method: "POST",
           headers: {
@@ -77,53 +80,60 @@ const Contact = () => {
       <section id="contact" className={styles.contact}>
         <h2>Contact Me</h2>
 
-        <div className={styles["contact-left"]}>
-          <div className={styles.contactDetail}>
-            <Icon icon={IoIosSend} border={false} />
-            <Clipboard text={"Email"}>{myDetails.email}</Clipboard>
+        <div className={styles.container}>
+          <div className={styles["contact-left"]}>
+            <div className={styles.contactDetail}>
+              <Icon icon={IoIosSend} border={false} />
+              <Clipboard text={"Email"}>{myDetails.email}</Clipboard>
+            </div>
+
+            <div className={styles.contactDetail}>
+              <Icon icon={FaPhone} border={false} />
+              <Clipboard text={"Phone Number"}>{myDetails.phone}</Clipboard>
+            </div>
+
+            <SocialIcon />
+
+            <Button
+              label={"Download CV"}
+              url={myCv}
+              downloadable={true}
+              fileName={"cvAslam.pdf"}
+            />
           </div>
 
-          <div className={styles.contactDetail}>
-            <Icon icon={FaPhone} border={false} />
-            <Clipboard text={"Phone Number"}>{myDetails.phone}</Clipboard>
+          <div className={styles["contact-right"]}>
+            <form onSubmit={handleSubmit}>
+              <Input
+                name="name"
+                value={inputField.name}
+                placeholder="Your Name"
+                action={handleTyping}
+              />
+              <Input
+                name="email"
+                value={inputField.email}
+                placeholder="Your Email"
+                action={handleTyping}
+              />
+              <Input
+                name="phNumber"
+                type={"tel"}
+                value={inputField.phNumber}
+                placeholder="Your Phone Number"
+                action={handleTyping}
+              />
+              <Input
+                name="message"
+                value={inputField.message}
+                placeholder="Your Message"
+                action={handleTyping}
+                isTextarea={true}
+              />
+
+              <Button label={btnText} />
+            </form>
           </div>
-
-          <SocialIcon />
-
-          <Button label={"Contact"} />
-        </div>
-
-        <div className={styles["contact-right"]}>
-          <form onSubmit={handleSubmit}>
-            <Input
-              name="name"
-              value={inputField.name}
-              placeholder="Your Name"
-              action={handleTyping}
-            />
-            <Input
-              name="email"
-              value={inputField.email}
-              placeholder="Your Email"
-              action={handleTyping}
-            />
-            <Input
-              name="phNumber"
-              type={"tel"}
-              value={inputField.phNumber}
-              placeholder="Your Phone Number"
-              action={handleTyping}
-            />
-            <Input
-              name="message"
-              value={inputField.message}
-              placeholder="Your Message"
-              action={handleTyping}
-              isTextarea={true}
-            />
-
-            <Button label={btnText} />
-          </form>
         </div>
       </section>
     </>

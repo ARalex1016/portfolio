@@ -16,12 +16,12 @@
 
 @media (max-width: 995px) {
   .para {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
   }
 }
 
 @media (max-width: 768px) {
   .para {
-    font-size: 1.6rem;
+    font-size: 1.8rem;
   }
 }
