@@ -12,8 +12,9 @@ import SocialIcon from "../Widgets/SocialIcon/SocialIcon";
 import Button from "../Widgets/Button/Button";
 import Input from "../Widgets/Input/Input";
 import Clipboard from "../Widgets/ClipboardCopy/Clipboard";
+import NotificationSnackBar from "../Widgets/NotificationSnackBar/NotificationSnackBar";
 
-// Icons from "react-icons.github.io/"
+// React Icons
 import { IoIosSend } from "react-icons/io";
 import { FaPhone } from "react-icons/fa6";
 
@@ -30,23 +31,22 @@ const Contact = () => {
   const btnInitialtext = "Send Message";
   const [inputField, setInputField] = useState(initialInputField);
   const [btnText, setBtnText] = useState(btnInitialtext);
+  const [snackbarStatus, setSnackbarStatus] = useState(null);
+  const [snackbarMessage, setSnackbarMessage] = useState("");
 
   const handleTyping = (event) => {
     const { name, value } = event.target;
 
-    setInputField((pre) => {
-      return {
-        ...pre,
-        [name]: value,
-      };
-    });
+    setInputField((pre) => ({
+      ...pre,
+      [name]: value,
+    }));
   };
 
   const handleSubmit = async (event) => {
     event.preventDefault();
 
     setBtnText("Sending...");
-    setInputField(initialInputField);
     try {
       const response = await fetch(
         "https://portfolioserver-7o94.onrender.com/sendMail/",
@@ -59,19 +59,19 @@ const Contact = () => {
         }
       );
 
-      // const result = await response.json();
-
       if (response.ok) {
-        setBtnText(btnInitialtext);
-        alert("Message Sent Successfully! ");
+        setSnackbarStatus("success");
+        setSnackbarMessage("Message Sent Successfully!");
       } else {
-        setBtnText(btnInitialtext);
-        alert("Something went wrong! ");
+        setSnackbarStatus("error");
+        setSnackbarMessage("Something went wrong!");
       }
     } catch (error) {
+      setSnackbarStatus("error");
+      setSnackbarMessage(`Error sending message: ${error.message}`);
+    } finally {
       setBtnText(btnInitialtext);
-      console.log(error);
-      alert("Error sending message:", error);
+      setInputField(initialInputField);
     }
   };
 
@@ -136,6 +136,7 @@ const Contact = () => {
           </div>
         </div>
       </section>
+      <NotificationSnackBar status={snackbarStatus} message={snackbarMessage} />
     </>
   );
 };
