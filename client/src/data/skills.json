@@ -17,6 +17,11 @@
   {
     "title": "React JS",
     "imageSrc": "/skillsImg/react.png",
+    "percentage": "60"
+  },
+  {
+    "title": "Node JS",
+    "imageSrc": "/skillsImg/nodeJS.png",
     "percentage": "40"
   }
 ]
