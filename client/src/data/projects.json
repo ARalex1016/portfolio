@@ -1,18 +1,19 @@
 [
   {
-    "title": "Fetch Tube",
-    "imageSrc": "/projectsImg/fetchTube.png",
-    "description": "Developed a user-friendly site from scratch using React, enabling seamless YouTube video downloads in MP3 or MP4 formats via an integrated API.",
-    "skills": ["react", "css", "javascript"],
-    "demo": "https://fetchtube.netlify.app/",
-    "source": ""
-  },
-  {
     "title": "Check Lift",
     "imageSrc": "/projectsImg/todoList.png",
     "description": "Todo list",
     "skills": ["react", "css", "javascript"],
     "demo": "https://checklift.netlify.app/",
+    "source": "",
+    "size": "1920 x 1080"
+  },
+  {
+    "title": "Fetch Tube",
+    "imageSrc": "/projectsImg/fetchTube.png",
+    "description": "Developed a user-friendly site from scratch using React, enabling seamless YouTube video downloads in MP3 or MP4 formats via an integrated API.",
+    "skills": ["react", "css", "javascript"],
+    "demo": "https://fetchtube.netlify.app/",
     "source": ""
   }
 ]
