@@ -1,4 +1,4 @@
-import { useReducer, useState } from "react";
+import { useState } from "react";
 
 // Styles
 import styles from "./Contact.module.css";
