@@ -4,6 +4,7 @@ import { useEffect, useState, useCallback } from "react";
 import myDetails from "../../data/myDetails.json";
 
 // Assets
+import bannerImg3 from "../../assets/bannerImg/bannerImg3.png";
 import bannerImg4 from "../../assets/bannerImg/bannerImg4.png";
 import myResume from "../../assets/myCv/MyResume.pdf";
 
@@ -59,7 +60,7 @@ const Banner = () => {
     <>
       <section id="home" className={styles.home}>
         <div className={styles["home-img"]}>
-          <img src={bannerImg4} alt="hero_image" />
+          <img src={bannerImg3} alt="hero_image" />
         </div>
 
         <div className={styles["home-content"]}>
